@@ -1,7 +1,7 @@
 #Flask Sistem Informasi Pembayaran SPP Sma Ulul Albab Taman Sidoarjo 
-#Implement with : 
-	- Flask
-	- Flask-Alchemy
-	- Mysql
-	- Python3
-	- Jinja2
+#Implement with :\n 
+	- Flask\n
+	- Flask-Alchemy\n
+	- Mysql\n
+	- Python3\n
+	- Jinja2\n
