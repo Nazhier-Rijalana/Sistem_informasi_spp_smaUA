@@ -1,5 +1,16 @@
-# Enable Flask's debugging features. Should be False in production
-DEBUG = False
+class Config(object):
 
-# Enable protection against Cross-site Request Forgery (CSRF)
-CSRF_ENABLED = True
+class DevelopmentConfig(Config):
+	DEBUG = True
+	CSRF_ENABLED = True
+	SQLALCHEMY_ECHO = True
+
+class ProductionConfig(Config):
+	DEBUG = False
+	CSRF_ENABLED = True
+	SQLALCHEMY_ECHO = False
+
+app_config = {
+	'dev' : DevelopmentConfig,
+	'pro' : ProductionConfig
+}
