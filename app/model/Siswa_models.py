@@ -25,5 +25,3 @@ class Siswa(UserMixin, db.Model):
 @login.user_loader
 def load_user(user_id):
 	return Siswa.query.get(int(user_id))
-
-	

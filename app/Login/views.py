@@ -4,20 +4,18 @@ from flask_login import (
 	login_user,
 	logout_user
 	)
-from . import auth
+from . import Login
 from forms import LoginForm, RegistrationForm
 from .. import db 
 from ..models import Siswa
-
-@auth.route('/Registrasi', methods=['GET', 'POST'])
-def Registrasi():
-	form = RegistrationForm()
+@Login.route('/Login', methods=['GET', 'POST'])
+def Login():
+	form = LoginForm():
 	if form.validate_on_submit():
-		siswa = Siswa(
-			)
-		db.session.add(Siswa)
-		db.session.commit()
-		flash("Data siswa Berhasil di masukkan")
-		return redirect(url_for('Login.Registrasi'))
-	return render_template('Login/Registrasi.html', form=form, title='Registrasi Siswa Baru' )
+		if is.admin():
+			flash("Login Berhasil")
+			return render_template('Admin/index.html')
+		else:
+			return render_template('Siswa/index.html')
 
+	return render_template('Login/Login.html')
